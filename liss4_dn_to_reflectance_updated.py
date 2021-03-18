@@ -6,6 +6,9 @@ Rsesnor = (pi*Lλ*d^2)/(ESUNi*COS(z)) where d = (1-0.01672*COS(RADIANS(0.9856*(J
 Created on Thu Mar  4 09:50:40 2021
 Code Revision: 
     1). 18th March : Puneeth Changed B2_Lmax=52.0000, B3_Lmax=47.0000, B4_Lmax=31.5000. 
+    
+Scope for Improvement:
+    1). To work for GeoRPC product types too. (File name slightly different.)
 
 @author: Shubham
 """
