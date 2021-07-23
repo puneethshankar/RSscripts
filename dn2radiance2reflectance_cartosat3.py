@@ -1,20 +1,16 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Thu Jul 15 19:03:09 2021
 
-@author: gsaiv
 """
-"""
-Script converts R2A LISS-IV DNs to Radiance and then to Reflectance using 
-Lλ = (DN*Lmax)/1024
+Script converts Cartosat 3 DNs to Radiance and then to Reflectance using 
+Lλ = (DN*Lmax)/(2^b) where b=no. of bits(radiometric resolution)
 Rsesnor = (pi*Lλ*d^2)/(ESUNi*COS(z)) where d = (1-0.01672*COS(RADIANS(0.9856*(Julian Day-4))))  
 Created on Thu Mar  4 09:50:40 2021
 Code Revision: 
-    1). 18th March : Puneeth Changed B2_Lmax=52.0000, B3_Lmax=47.0000, B4_Lmax=31.5000. 
+    1). 23rd July : Puneeth Changed header
     
 Scope for Improvement:
-    1). To work for GeoRPC product types too. (File name slightly different.)
-@author: Shubham
+    1). Auto grab files within folder for batch processing
+@author: Sai Venkat 
 """
 
 import os
@@ -31,11 +27,10 @@ import matplotlib.pyplot as plt
 # I. DN to RADIANCE
 
 #Main Directory
-main_folder= "F:\\Geospoc\\VHR_Classes_Seperability\\Cartosat3_sample_data\\" #6 feb 2020
-#"C:\\Users\\punee\\Downloads\\OneDrive_1_3-17-2021\\211088811\\211088811\\"#7jan2021 "D:\\LISS-4-data-new\\211089011\\"
+main_folder= "C:\\xyz\\Cartosat3_sample_data\\" #6 feb 2020
 
 str_expr='python {0} -A {1} --outfile={2} --calc={3} --type=Float32'
-calc_path='C:\\Users\\gsaiv\\Anaconda3\\Lib\\site-packages\\GDAL-3.0.2-py3.8-win-amd64.egg-info\\scripts\\gdal_calc.py'
+calc_path='C:\\Users\\...\\Anaconda3\\Lib\\site-packages\\GDAL-3.0.2-py3.8-win-amd64.egg-info\\scripts\\gdal_calc.py'
 
 
 # DN to Radiance B1
